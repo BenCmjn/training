@@ -79,6 +79,14 @@
 
     function setDate() {
       const now = new Date();
+      
+      /* //Optional: milliseconds ////////////////////////////
+      const milliseconds = now.getMilliseconds();
+      const millisecondsDegrees = ((milliseconds / 60) * 360) + 90;
+      secondHand.style.transform = `rotate(${millisecondsDegrees}deg)`;
+      console.log(milliseconds);
+      */
+
       const seconds = now.getSeconds();
       const secondsDegrees = ((seconds / 60) * 360) + 90;
       secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
@@ -93,7 +101,8 @@
       const hoursDegrees = ((hours / 60) * 360) + 90;
       hoursHand.style.transform = `rotate(${hoursDegrees}deg)`;
       console.log(hours);
-
+      /* //Optional: if function to remove the weird transform when degrees = 0
+      */
     }
 
     setInterval(setDate, 1000);
